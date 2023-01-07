@@ -11,6 +11,13 @@ img {
 		<v-row dense>
 			<v-col>
 				<div class="hidden-sm-only col col-12">
+					<JobProgress />
+				</div>
+			</v-col>
+		</v-row>
+		<v-row dense>
+			<v-col>
+				<div class="hidden-sm-only col col-12">
 					<JobControlPanel />
 				</div>
 				<div class="hidden-sm-only col col-12">
@@ -51,6 +58,7 @@ import JobControlPanel from '../../components/panels/JobControlPanel.vue'
 import JobEstimationsPanel from '../../components/panels/JobEstimationsPanel.vue'
 import WebcamPanel from '../../components/panels/WebcamPanel.vue'
 import MacroList from '../../components/lists/MacroList.vue'
+import JobProgress from '../../components/misc/JobProgress.vue'
 
 
 
@@ -63,6 +71,7 @@ export default {
 		JobEstimationsPanel,
 		WebcamPanel,
 		MacroList,
+		JobProgress,
 	},
 	data() { },
 
