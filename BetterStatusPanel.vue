@@ -28,6 +28,9 @@ img {
 				<div class="hidden-sm-only col col-12">
 					<MacroList />
 				</div>
+				<div class="hidden-sm-only col col-12">
+					<v-btn :small="!mobileActive" :x-small="mobileActive" :fab="mobileActive" v-bind="attrs" v-on="on" :elevation="1" @click="toggleTopPanelBtn()"></v-btn>
+					</div>
 			</v-col>
 			<v-col>
 				<div class="hidden-sm-only col col-12">
@@ -59,6 +62,7 @@ import JobEstimationsPanel from '../../components/panels/JobEstimationsPanel.vue
 import WebcamPanel from '../../components/panels/WebcamPanel.vue'
 import MacroList from '../../components/lists/MacroList.vue'
 import JobProgress from '../../components/misc/JobProgress.vue'
+import { element } from 'prop-types'
 
 
 
@@ -74,6 +78,18 @@ export default {
 		JobProgress,
 	},
 	data() { },
+	methods: {
+		toggleTopPanel(){
+			let topPanel = window.document.getElementById("global-container");
+			let hidden = element.getattribute("hidden");
+
+			if (hidden) {
+				topPanel.removeAttribute("hidden");
+			} else {
+				topPanel.setAttribute("hidden", "hidden");
+			}
+		}
+	}
 
 }
 
