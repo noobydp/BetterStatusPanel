@@ -27,10 +27,11 @@ img {
 			<v-col>
 				<div class="hidden-sm-only col col-12">
 					<MacroList />
+					<v-btn @click="toggleTopPanel()"><div>Show/Hide Top Bar</div></v-btn>
 				</div>
 				<div class="hidden-sm-only col col-12">
-					<v-btn :small="!mobileActive" :x-small="mobileActive" :fab="mobileActive" v-bind="attrs" v-on="on" :elevation="1" @click="toggleTopPanelBtn()"></v-btn>
-					</div>
+
+				</div>
 			</v-col>
 			<v-col>
 				<div class="hidden-sm-only col col-12">
@@ -62,7 +63,7 @@ import JobEstimationsPanel from '../../components/panels/JobEstimationsPanel.vue
 import WebcamPanel from '../../components/panels/WebcamPanel.vue'
 import MacroList from '../../components/lists/MacroList.vue'
 import JobProgress from '../../components/misc/JobProgress.vue'
-import { element } from 'prop-types'
+// import { element } from 'prop-types'
 
 
 
@@ -77,17 +78,20 @@ export default {
 		MacroList,
 		JobProgress,
 	},
-	data() { },
 	methods: {
-		toggleTopPanel(){
+		toggleTopPanel() {
+			console.log("toggling top panel")
 			let topPanel = window.document.getElementById("global-container");
-			let hidden = element.getattribute("hidden");
+			let hidden = topPanel.getAttribute("hidden");
 
 			if (hidden) {
 				topPanel.removeAttribute("hidden");
+				console.log("removed hidden attribute")
 			} else {
 				topPanel.setAttribute("hidden", "hidden");
+				console.log("added hidden attribute")
 			}
+			return;
 		}
 	}
 
