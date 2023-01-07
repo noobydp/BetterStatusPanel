@@ -1,0 +1,11 @@
+{
+  "id": "BetterStatusPanel",
+  "name": "Better Status Panel",
+  "dwcWebpackChunk": "BetterStatusPanel",
+  "author": "noobydp",
+  "version": "1.0.0",
+  "license": "Plugin License",
+  "homepage": "https://github.com/noobydp",
+  "dwcVersion": "3.4",
+  "sbcRequired": false
+}
